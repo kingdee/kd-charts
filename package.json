@@ -1,7 +1,7 @@
 {
-  "name": "kd-charts",
-  "version": "1.0.2",
-  "homepage": "http://kui.kingdee.com/charts",
+  "name": "@kdcloudjs/kd-charts",
+  "version": "1.0.7",
+  "homepage": "https://charts.kingdee.design",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build && gulp copy-docs",
@@ -12,9 +12,6 @@
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
-  },
-  "publishConfig": {
-    "registry": "https://www.npmjs.com"
   },
   "files": [
     "dist",
