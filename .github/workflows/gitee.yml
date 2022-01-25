@@ -13,5 +13,5 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.GITEE_SSH_PRIVATE_KEY }}
         with:
-          source-repo: 'git@github.com:kdcloudone/test.git'
-          destination-repo: 'git@gitee.com:kdcloudone/test.git'
+          source-repo: 'git@github.com:kdcloudone/kd-charts.git'
+          destination-repo: 'git@gitee.com:kdcloudone/kd-charts.git'
