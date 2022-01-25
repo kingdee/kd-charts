@@ -68,4 +68,4 @@ export default kcharts;
 
 ## License
 
-KDesign Charts 使用了 Apache License, Version 2.0. 详细 license 请查看 [LICENSE](https://github.com/kdcloudone/kd-charts/blob/master/README.md)
+KDesign Charts 使用了 Apache License, Version 2.0. 详细 license 请查看 [LICENSE](https://github.com/kdcloudone/kd-charts/blob/master/LICENSE)
