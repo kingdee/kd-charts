@@ -1,8 +1,3 @@
----
-order: 0
-title: 介绍
----
-
 # KDesign Charts
 
 KDesign Charts 是基于金蝶的企业级设计系统 KDesign 实现的一套可视化图表库，简单好用。
