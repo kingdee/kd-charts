@@ -1,0 +1,172 @@
+@import (reference) '../style/variables.less';
+
+.kd-tooltip {
+  max-width: none !important;
+  border-radius: 4px !important;
+  margin-top: -4px !important;
+  margin-left: -35px !important;
+}
+
+.navbar {
+  width: 100%;
+  height: 64px;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  z-index: 110;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgba(51, 51, 51, 1);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in;
+
+  &-charts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+  }
+
+  &-logo {
+    height: 28px;
+    width: 148px;
+    background-image: url(./img/kui.png);
+    flex: 0 0 260px;
+    // background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 40px;
+  }
+
+  &-search {
+    margin-right: 100px;
+
+    > span {
+      color: #999;
+      font-size: 11px;
+      margin-left: 20px;
+    }
+  }
+
+  .nav-title {
+    position: relative;
+    margin-left: 40px;
+    display: inline-block;
+    height: 64px;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 64px;
+    text-decoration: none;
+    letter-spacing: 0;
+
+    &:hover {
+      cursor: pointer;
+      color: rgba(42, 132, 238, 1);
+    }
+
+    &.active {
+      font-weight: 600;
+      color: rgba(42, 132, 238, 1);
+    }
+
+    &.active {
+      border-bottom: 2px solid;
+    }
+  }
+
+  &.transparent {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.8);
+    box-shadow: none;
+
+    .navbar-logo {
+      background-image: url(./img/kui_white.png);
+    }
+
+    .navbar-search {
+      > span {
+        color: #fff;
+      }
+    }
+
+    .nav-title {
+      &:hover {
+        cursor: pointer;
+        color: #fff;
+      }
+
+      &.active {
+        color: #fff;
+      }
+    }
+  }
+
+  &-toggle {
+    margin-left: 20px;
+    cursor: pointer;
+    display: none;
+    width: 22px;
+    height: 22px;
+    border: 0;
+    outline: none;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFgAAAA4CAYAAAB5YT9uAAAAAXNSR0IArs4c6QAAASVJREFUeAHt3DuOwjAUBVAHscWZjaSkAIqU2QjskV80QwpsF3ArdGiw3hW3OGnQM2Iof6/dfr7+n71/LjAdx+HRsvm8SkNPAHBPJ5ABDiD2KgD3dAIZ4ABirwJwTyeQAQ4g9ioA93QC2fbZsSm/z7MDAQIECBAgQIAAAQIECBAgQIAAAQKvAsvV8mO8O8yn19jkXYHpMC7byXVdeS0/75b5XFvAwr1tE0kARxjbJYDbNpEEcISxXQK4bRNJAEcY2yWA2zaRZP0ePJRzpFEJAQIECBAgQIAAAQIECBAgQIAAgW8VWK/tj7Nb5eBTnvbjsp1c15WX4ncRQeB7lb8zyHrW29xo1F1iU8AxynoR4LpLbAo4RlkvAlx3iU0BxyjrRYDrLrHpDVSAEEPXScHTAAAAAElFTkSuQmCC')
+      no-repeat center / contain;
+
+    @media @mobile {
+      display: block;
+    }
+  }
+
+  @media @mobile {
+    .version,
+    nav {
+      display: none;
+    }
+  }
+}
+
+.nav-tooltip {
+  display: flex;
+  padding: 0 0 24px 28px;
+
+  &-item {
+    &-text,
+    &-top {
+      width: 112px;
+      font-size: 14px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #212121;
+      margin-right: 30px;
+    }
+
+    &-text {
+      cursor: pointer;
+      padding: 8px 10px 8px 2px;
+
+      a,
+      a:link,
+      a:visited,
+      a:hover,
+      a:active {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+      }
+
+      &:hover {
+        background: #f5f6f7;
+      }
+    }
+
+    &-top {
+      color: #666;
+      border-bottom: 1px solid #dcdcdc;
+      margin-bottom: 10px;
+      padding: 20px 0 10px 0;
+    }
+  }
+}

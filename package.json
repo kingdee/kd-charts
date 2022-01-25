@@ -1,7 +1,7 @@
 {
-  "name": "@kdcloudjs/kd-charts",
-  "version": "1.0.7",
-  "homepage": "https://charts.kingdee.design",
+  "name": "@kingdee-ui/charts",
+  "version": "0.1.3",
+  "homepage": "kui.kingdee.com/charts",
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build && gulp copy-docs",
@@ -12,6 +12,9 @@
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
+  },
+  "publishConfig": {
+    "registry": "http://npm.kingdee.com"
   },
   "files": [
     "dist",
@@ -55,15 +58,5 @@
     "prettier": "^1.19.1",
     "rimraf": "^3.0.2",
     "yorkie": "^2.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kdcloudone/kd-charts.git"
-  },
-  "author": "kdcloudone",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/kdcloudone/kd-charts/issues"
-  },
-  "description": ""
+  }
 }
