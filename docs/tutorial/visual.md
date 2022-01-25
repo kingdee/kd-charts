@@ -104,13 +104,13 @@ $  kd-visualize create xxx(项目名称)
 ```bash
 <!-- 引入主题 -->
 //常规色板
-import defaultTheme from '@kingdee-ui/charts/theme/echarts-theme-default.js';
+import defaultTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-default.js';
 //红火夏日
-import redTheme from '@kingdee-ui/charts/theme/echarts-theme-red.js';
+import redTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-red.js';
 //自然舒适
-import naturalTheme from '@kingdee-ui/charts/theme/echarts-theme-natural.js';
+import naturalTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-natural.js';
 //科技色板
-import scienceTheme from '@kingdee-ui/charts/theme/echarts-theme-science.js';
+import scienceTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-science.js';
 
 //注册主题
 echarts.registerTheme('defaultTheme', defaultTheme);

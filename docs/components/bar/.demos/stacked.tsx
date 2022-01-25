@@ -2,7 +2,7 @@ import React from 'react';
 import { DefaultOption } from './data/stacked';
 import * as echarts from 'echarts';
 import ReactECharts from 'echarts-for-react';
-import defaultTheme from '@kingdee-ui/charts/theme/echarts-theme-default.js';
+import defaultTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-default.js';
 function index() {
   echarts.registerTheme('defaultTheme', defaultTheme);
   return (

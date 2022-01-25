@@ -1,9 +1,9 @@
 import { FC, MouseEvent, useEffect, useRef, useState } from 'react';
 import React, { useContext, RefObject } from 'react';
 import { context, Link, NavLink } from 'dumi/theme';
-import { Tooltip } from '@kingdee-ui/kui';
+import { Tooltip } from '@kdcloudjs/kdesign';
 import { useHistory } from 'react-router-dom';
-import usePopper from '../../../node_modules/@kingdee-ui/kui/lib/_utils/usePopper';
+import usePopper from '../../../node_modules/@kdcloudjs/kdesign/lib/_utils/usePopper';
 import './Navbar.less';
 
 interface INavbarProps {

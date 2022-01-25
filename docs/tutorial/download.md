@@ -47,7 +47,7 @@
 ```jsx | pure
 
 <!-- 引入 defaultTheme 主题 -->
-// import defaultTheme from '@kingdee-ui/charts/theme/echarts-theme-default.js'
+// import defaultTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-default.js'
 
 
 //注册主题

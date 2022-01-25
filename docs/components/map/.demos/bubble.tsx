@@ -1,7 +1,7 @@
 import React from 'react';
 import { DefaultOption } from './data/bubble';
 import * as echarts from 'echarts';
-import defaultTheme from '@kingdee-ui/charts/theme/echarts-theme-default.js';
+import defaultTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-default.js';
 import ReactECharts from 'echarts-for-react';
 function index() {
   echarts.registerTheme('defaultTheme', defaultTheme);

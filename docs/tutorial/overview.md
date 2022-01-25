@@ -45,16 +45,16 @@ import { DefaultOption as choropleth } from '../components/map/.demos/data/choro
 
 import * as echarts from 'echarts';
 import ReactECharts from 'echarts-for-react';
-import { Radio, Switch } from '@kingdee-ui/kui';
-import '@kingdee-ui/kui/dist/kui.css';
-import defaultTheme from '@kingdee-ui/charts/theme/echarts-theme-default.js';
-import redTheme from '@kingdee-ui/charts/theme/echarts-theme-red.js';
-import naturalTheme from '@kingdee-ui/charts/theme/echarts-theme-natural.js';
-import scienceTheme from '@kingdee-ui/charts/theme/echarts-theme-science.js';
-import defaultThemeDark from '@kingdee-ui/charts/theme/echarts-theme-default-dark.js';
-import redThemeDark from '@kingdee-ui/charts/theme/echarts-theme-red-dark.js';
-import naturalThemeDark from '@kingdee-ui/charts/theme/echarts-theme-natural-dark.js';
-import scienceThemeDark from '@kingdee-ui/charts/theme/echarts-theme-science-dark.js';
+import { Radio, Switch } from '@kdcloudjs/kdesign';
+import '@kdcloudjs/kdesign/dist/kdesign.css';
+import defaultTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-default.js';
+import redTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-red.js';
+import naturalTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-natural.js';
+import scienceTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-science.js';
+import defaultThemeDark from '@kdcloudjs/kd-charts/theme/echarts-theme-default-dark.js';
+import redThemeDark from '@kdcloudjs/kd-charts/theme/echarts-theme-red-dark.js';
+import naturalThemeDark from '@kdcloudjs/kd-charts/theme/echarts-theme-natural-dark.js';
+import scienceThemeDark from '@kdcloudjs/kd-charts/theme/echarts-theme-science-dark.js';
 
 export default function() {
   let defaultThemeList = [

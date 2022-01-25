@@ -1,6 +1,6 @@
 # KDesign Charts
 
-KDesign Charts 是基于金蝶的企业级设计系统 KDesign 实现的一套可视化图表库，简单好用。
+KDesign Charts 是基于金蝶的企业级设计系统 KDesign 实现的 echarts 皮肤，简单易用。
 
 ## 特性
 
@@ -18,9 +18,9 @@ KDesign Charts 是基于金蝶的企业级设计系统 KDesign 实现的一套�
 ### 使用 npm 或 yarn 安装
 
 ```bash
-$ npm install @kdcloudone/charts --save
+$ npm i @kdcloudjs/kd-charts --save
 # 或者
-$ yarn add @kdcloudone/charts
+$ yarn add @kdcloudjs/kd-charts
 ```
 
 ## 示例
@@ -30,7 +30,7 @@ import React from 'react';
 import { DefaultOption } from './data/area';
 import * as echarts from 'echarts';
 import ReactECharts from 'echarts-for-react';
-import defaultTheme from '@kingdee-ui/charts/theme/echarts-theme-default.js';
+import defaultTheme from '@kdcloudjs/kd-charts@1.0.4/dist/echarts-theme-default.js';
 function kcharts() {
   echarts.registerTheme('defaultTheme', defaultTheme);
   return (

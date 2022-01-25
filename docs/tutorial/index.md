@@ -14,11 +14,11 @@
 
 ```bash
 # npm
-$ npm install @kingdee-ui/charts -S --registry=http://npm.kingdee.com
+$ npm install @kdcloudjs/kd-charts -S --registry=http://npm.kingdee.com
 
 
 # yarn
-$ yarn add @kingdee-ui/charts -S --registry=http://npm.kingdee.com
+$ yarn add @kdcloudjs/kd-charts -S --registry=http://npm.kingdee.com
 ```
 
 ## 快速上手
@@ -28,7 +28,7 @@ import React from 'react';
 import { DefaultOption } from './data/area';
 import * as echarts from 'echarts';
 import ReactECharts from 'echarts-for-react';
-import defaultTheme from '@kingdee-ui/charts/theme/echarts-theme-default.js';
+import defaultTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-default.js';
 function kcharts() {
   echarts.registerTheme('defaultTheme', defaultTheme);
   return (

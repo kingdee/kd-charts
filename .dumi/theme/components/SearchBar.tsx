@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useSearch, AnchorLink } from 'dumi/theme';
-import { Icon } from '@kingdee-ui/kui';
+import { Icon } from '@kdcloudjs/kdesign';
 // @ts-ignore
 import arrow from './img/arrow.png';
 // @ts-ignore
