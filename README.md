@@ -27,10 +27,27 @@ $ yarn add @kdcloudjs/kd-charts
 
 ```js
 import React from 'react';
-import { DefaultOption } from './data/area';
 import * as echarts from 'echarts';
 import ReactECharts from 'echarts-for-react';
-import defaultTheme from '@kdcloudjs/kd-charts@1.0.4/dist/echarts-theme-default.js';
+import defaultTheme from '@kdcloudjs/kd-charts/dist/echarts-theme-default.js';
+const DefaultOption = {
+  xAxis: {
+    type: 'category',
+    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+  },
+  yAxis: {
+    type: 'value',
+    name: '单据消息订阅',
+  },
+  series: [
+    {
+      data: [120, 200, 150, 80, 70, 110, 130],
+      type: 'bar',
+      name: '生活费',
+    },
+  ],
+};
+
 function kcharts() {
   echarts.registerTheme('defaultTheme', defaultTheme);
   return (
@@ -56,7 +73,7 @@ export default kcharts;
 ```html
 <script src="echarts.js"></script>
 <!-- 引入 vintage 主题 -->
-<script src="theme/vintage.js"></script>
+<script src="https://unpkg.com/@kdcloudjs/kd-charts@1.1.0/dist/echarts-theme-default.js"></script>
 <script>
   // 第二个参数可以指定前面引入的主题
   var chart = echarts.init(document.getElementById('main'), 'vintage');
