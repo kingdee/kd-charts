@@ -9,10 +9,9 @@ import React, { useEffect, useState } from 'react';
 
 export default () => {
   const addGio = (gioType, href) => {
-    console.log(gioType, href);
     gio && gio('track', gioType);
-    // window.location.href =
-    // 'https://kui.kingdee.com/assets/other/theme/' + href + '.js';
+    window.location.href =
+      'https://kui.kingdee.com/assets/other/theme/' + href + '.js';
   };
 
   return (
