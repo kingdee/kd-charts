@@ -13,13 +13,17 @@ export default defineConfig({
   styles: [
     `.markdown{padding: 0 20px 30px 60px;max-width: initial !important;};`,
   ],
-  headScripts: [`https://kui.kingdee.com/static/kui-auth.js`],
+  // headScripts: [`https://kui.kingdee.com/static/kui-auth.js`],
   // links: [
   //   { rel: 'stylesheet', href: '/style.css' },
   // ],
   resolve: {
     includes: ['docs', 'src', 'images'],
   },
+  // dynamicImport: {
+  //   loading: '@/Loading',
+  // },
+
   navs: [
     {
       title: '指南',
@@ -59,5 +63,9 @@ export default defineConfig({
         ],
       },
     ],
+  },
+  hash: true,
+  targets: {
+    ie: 11,
   },
 });

@@ -1,46 +1,119 @@
 # 主题下载
 
-<h2 id="浅色主题">浅色主题</h2>
-<div class="gallery-item-box" style="grid-template-columns: repeat(4,25%)" >
-  
-  <a href="https://kui.kingdee.com/assets/other/theme/echarts-theme-default.js">
-    <img src="/charts/主题/常规色板.png" height="257px" />
-    <p style="color: #293c55;margin: 0; margin-top: 12px;">常规色板</p>
-  </a>
-  <a href="https://kui.kingdee.com/assets/other/theme/echarts-theme-red.js">
-    <img src="/charts/主题/红火夏日.png" height="257px" />
-    <p style="color: #293c55;margin: 0; margin-top: 12px;">红火夏日</p>
-  </a>
-  <a href="https://kui.kingdee.com/assets/other/theme/echarts-theme-natural.js">
-    <img src="/charts/主题/自然舒适.png" height="257px" />
-    <p style="color: #293c55;margin: 0; margin-top: 12px;">自然舒适</p>
-  </a>
-  <a href="https://kui.kingdee.com/assets/other/theme/echarts-theme-science.js">
-    <img src="/charts/主题/科技色板.png" height="257px" />
-    <p style="color: #293c55;margin: 0; margin-top: 12px;">科技色板</p>
-  </a>
-  </div>
+```jsx
+/**
+ * inline: true
+ */
 
-<h2 id="深色主题">深色主题</h2>
-<div class="gallery-item-box" style="grid-template-columns: repeat(4,25%)">
-  <a href="https://kui.kingdee.com/assets/other/theme/echarts-theme-default-dark.js">
-    <img src="/charts/主题/常规色板_dark.png" height="313px" />
-    <p style="color: #293c55;margin: 0; margin-top: 12px;">常规色板</p>
-  </a>
-  <a href="https://kui.kingdee.com/assets/other/theme/echarts-theme-red-dark.js">
-    <img src="/charts/主题/红火夏日_dark.png" height="313px" />
-    <p style="color: #293c55;margin: 0; margin-top: 12px;">红火夏日</p>
-  </a>
-  <a href="https://kui.kingdee.com/assets/other/theme/echarts-theme-natural-dark.js">
-    <img src="/charts/主题/自然舒适_dark.png" height="313px" />
-    <p style="color: #293c55;margin: 0; margin-top: 12px;">自然舒适</p>
-  </a>
-  <a href="https://kui.kingdee.com/assets/other/theme/echarts-theme-science-dark.js">
-    <img src="/charts/主题/科技色板_dark.png" height="313px" />
-    <p style="color: #293c55;margin: 0; margin-top: 12px;">科技色板</p>
-  </a>
+import React, { useEffect, useState } from 'react';
 
-  </div>
+export default () => {
+  const addGio = (gioType, href) => {
+    console.log(gioType, href);
+    gio && gio('track', gioType);
+    // window.location.href =
+    // 'https://kui.kingdee.com/assets/other/theme/' + href + '.js';
+  };
+
+  return (
+    <div className="markdown">
+      <h2 id="浅色主题">浅色主题</h2>
+      <div
+        className="gallery-item-box"
+        style={{ gridTemplateColumns: 'repeat(4,25%)' }}
+      >
+        <div
+          onClick={() => {
+            addGio('theme_light_general', 'echarts-theme-default');
+          }}
+        >
+          <img src="/charts/主题/常规色板.png" height="257px" />
+          <p style={{ color: '#293c55', margin: 0, marginTop: '12px' }}>
+            常规色板
+          </p>
+        </div>
+        <div
+          onClick={() => {
+            addGio('theme_light_red', 'echarts-theme-red');
+          }}
+        >
+          <img src="/charts/主题/红火夏日.png" height="257px" />
+          <p style={{ color: '#293c55', margin: 0, marginTop: '12px' }}>
+            红火夏日
+          </p>
+        </div>
+        <div
+          onClick={() => {
+            addGio('theme_light_natural', 'echarts-theme-natural');
+          }}
+        >
+          <img src="/charts/主题/自然舒适.png" height="257px" />
+          <p style={{ color: '#293c55', margin: 0, marginTop: '12px' }}>
+            自然舒适
+          </p>
+        </div>
+        <div
+          onClick={() => {
+            addGio('theme_light_science', 'echarts-theme-science');
+          }}
+        >
+          <img src="/charts/主题/科技色板.png" height="257px" />
+          <p style={{ color: '#293c55', margin: 0, marginTop: '12px' }}>
+            科技色板
+          </p>
+        </div>
+      </div>
+
+      <h2 id="深色主题">深色主题</h2>
+      <div
+        className="gallery-item-box"
+        style={{ gridTemplateColumns: 'repeat(4,25%)' }}
+      >
+        <div
+          onClick={() => {
+            addGio('theme_dark_general', 'echarts-theme-default-dark');
+          }}
+        >
+          <img src="/charts/主题/常规色板_dark.png" height="313px" />
+          <p style={{ color: '#293c55', margin: 0, marginTop: '12px' }}>
+            常规色板
+          </p>
+        </div>
+        <div
+          onClick={() => {
+            addGio('theme_dark_red', 'echarts-theme-red-dark');
+          }}
+        >
+          <img src="/charts/主题/红火夏日_dark.png" height="313px" />
+          <p style={{ color: '#293c55', margin: 0, marginTop: '12px' }}>
+            红火夏日
+          </p>
+        </div>
+        <div
+          onClick={() => {
+            addGio('theme_dark_natural', 'echarts-theme-natural-dark');
+          }}
+        >
+          <img src="/charts/主题/自然舒适_dark.png" height="313px" />
+          <p style={{ color: '#293c55', margin: 0, marginTop: '12px' }}>
+            自然舒适
+          </p>
+        </div>
+        <div
+          onClick={() => {
+            addGio('theme_dark_science', 'echarts-theme-science-dark');
+          }}
+        >
+          <img src="/charts/主题/科技色板_dark.png" height="313px" />
+          <p style={{ color: '#293c55', margin: 0, marginTop: '12px' }}>
+            科技色板
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+```
 
 ## 主题使用示例
 

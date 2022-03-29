@@ -25,10 +25,27 @@ $ yarn add @kdcloudjs/kd-charts -S --registry=http://npm.kingdee.com
 
 ```bash
 import React from 'react';
-import { DefaultOption } from './data/area';
 import * as echarts from 'echarts';
 import ReactECharts from 'echarts-for-react';
-import defaultTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-default.js';
+import defaultTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-default.js';//引入主题
+const DefaultOption = {
+    xAxis: {
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    },
+    yAxis: {
+        type: 'value',
+        name: '单据消息订阅',
+    },
+    series: [
+        {
+            data: [120, 200, 150, 80, 70, 110, 130],
+            type: 'bar',
+            name: '生活费',
+        },
+    ]
+};
+
 function kcharts() {
   echarts.registerTheme('defaultTheme', defaultTheme);
   return (
