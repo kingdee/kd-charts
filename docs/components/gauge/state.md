@@ -1,5 +1,5 @@
 ---
-title: 状态仪表盘 State Gauge
+title: State Gauge 状态仪表盘
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 40
 ---
 
-# 状态仪表盘 State Gauge
+# State Gauge 状态仪表盘
 
 <code src="./.demos/state.tsx"></code>

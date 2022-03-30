@@ -1,5 +1,5 @@
 ---
-title: 分级统计地图 Choropleth Map
+title: Choropleth Map 分级统计地图
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 80
 ---
 
-# 分级统计地图 Choropleth Map
+# Choropleth Map 分级统计地图
 
 <code src="./.demos/choropleth.tsx"></code>

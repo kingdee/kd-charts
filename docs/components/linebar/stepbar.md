@@ -1,5 +1,5 @@
 ---
-title: 阶梯柱状图 Mixed Step And Bar chart
+title: Mixed Step And Bar chart 阶梯柱状图
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 30
 ---
 
-# 阶梯柱状图 Mixed Step And Bar chart
+# Mixed Step And Bar chart 阶梯柱状图
 
 <code src="./.demos/stepbar.tsx"></code>

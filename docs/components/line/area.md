@@ -1,5 +1,5 @@
 ---
-title: 面积图 Area chart
+title: Area chart 面积图
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 20
 ---
 
-# 面积图 Area chart
+# Area chart 面积图
 
 <code src="./.demos/area.tsx"></code>

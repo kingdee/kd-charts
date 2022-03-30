@@ -1,5 +1,5 @@
 ---
-title: 堆叠柱状图 Stacked Bar Chart
+title: Stacked Bar Chart 堆叠柱状图
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 10
 ---
 
-# 堆叠柱状图 Stacked Bar
+# Stacked Bar Chart 堆叠柱状图
 
 <code src="./.demos/stacked"></code>

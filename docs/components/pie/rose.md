@@ -1,5 +1,5 @@
 ---
-title: 同色系玫瑰图 Nightingale Rose Chart
+title: Nightingale Rose Chart 同色系玫瑰图
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 30
 ---
 
-# 同色系玫瑰图 Nightingale Rose Chart
+# Nightingale Rose Chart 同色系玫瑰图
 
 <code src="./.demos/rose"></code>

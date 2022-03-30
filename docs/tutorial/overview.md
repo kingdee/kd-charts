@@ -47,14 +47,16 @@ import * as echarts from 'echarts';
 import ReactECharts from 'echarts-for-react';
 import { Radio, Switch } from '@kdcloudjs/kdesign';
 import '@kdcloudjs/kdesign/dist/kdesign.css';
-import defaultTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-default.js';
-import redTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-red.js';
-import naturalTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-natural.js';
-import scienceTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-science.js';
-import defaultThemeDark from '@kdcloudjs/kd-charts/theme/echarts-theme-default-dark.js';
-import redThemeDark from '@kdcloudjs/kd-charts/theme/echarts-theme-red-dark.js';
-import naturalThemeDark from '@kdcloudjs/kd-charts/theme/echarts-theme-natural-dark.js';
-import scienceThemeDark from '@kdcloudjs/kd-charts/theme/echarts-theme-science-dark.js';
+import defaultTheme from '@kdcloudjs/kd-charts/dist/echarts-theme-default.js';
+import redTheme from '@kdcloudjs/kd-charts/dist/echarts-theme-red.js';
+import naturalTheme from '@kdcloudjs/kd-charts/dist/echarts-theme-natural.js';
+import scienceTheme from '@kdcloudjs/kd-charts/dist/echarts-theme-science.js';
+import defaultThemeDark from '@kdcloudjs/kd-charts/dist/echarts-theme-default-dark.js';
+import redThemeDark from '@kdcloudjs/kd-charts/dist/echarts-theme-red-dark.js';
+import naturalThemeDark from '@kdcloudjs/kd-charts/dist/echarts-theme-natural-dark.js';
+import scienceThemeDark from '@kdcloudjs/kd-charts/dist/echarts-theme-science-dark.js';
+
+import chinaJson from '../../src/theme/src/common/map/json/china.json';
 
 export default function() {
   let defaultThemeList = [
@@ -99,10 +101,8 @@ export default function() {
   echarts.registerTheme('redThemeDark', redThemeDark);
   echarts.registerTheme('naturalThemeDark', naturalThemeDark);
   echarts.registerTheme('scienceThemeDark', scienceThemeDark);
-  echarts.registerMap(
-    'china',
-    require('../../src/theme/src/common/map/json/china.json'),
-  ); //将地图数据注册到echart对象上
+
+  echarts.registerMap('china', chinaJson);
   return (
     <>
       <div className="markdown" style={{ padding: '20px' }}>
@@ -129,7 +129,7 @@ export default function() {
         <h2 id="柱状图">柱状图</h2>
 
         <div
-          class="gallery-item-box"
+          className="gallery-item-box"
           style={{
             gridTemplateColumns: 'repeat(3,33.3333%)',
             marginTop: '20px',
@@ -142,7 +142,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/bar/basic">基础柱状图</a>
+              <a href="/components/bar/basic">基础柱状图</a>
             </p>
           </div>
           <div className="gallery-item-box-li">
@@ -152,7 +152,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/bar/bi-directional">区间柱状图</a>
+              <a href="/components/bar/bi-directional">区间柱状图</a>
             </p>
           </div>
           <div className="gallery-item-box-li">
@@ -162,7 +162,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/bar/grouped">分组柱状图</a>
+              <a href="/components/bar/grouped">分组柱状图</a>
             </p>
           </div>
           <div className="gallery-item-box-li">
@@ -172,7 +172,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/bar/horizontal">横向柱状图</a>
+              <a href="/components/bar/horizontal">横向柱状图</a>
             </p>
           </div>
           <div className="gallery-item-box-li">
@@ -182,7 +182,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/bar/stacked">堆叠柱状图</a>
+              <a href="/components/bar/stacked">堆叠柱状图</a>
             </p>
           </div>
         </div>
@@ -190,7 +190,7 @@ export default function() {
         <h2 id="折线图">折线图</h2>
 
         <div
-          class="gallery-item-box"
+          className="gallery-item-box"
           style={{ gridTemplateColumns: 'repeat(3,33.3333%)' }}
         >
           <div className="gallery-item-box-li">
@@ -200,7 +200,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/line/basic">基础折线图</a>
+              <a href="/components/line/basic">基础折线图</a>
             </p>
           </div>
           <div className="gallery-item-box-li">
@@ -210,7 +210,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/line/smooth">曲线图</a>
+              <a href="/components/line/smooth">曲线图</a>
             </p>
           </div>
           <div className="gallery-item-box-li">
@@ -220,7 +220,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/line/area">面积图</a>
+              <a href="/components/line/area">面积图</a>
             </p>
           </div>
           <div className="gallery-item-box-li">
@@ -230,7 +230,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/line/stacked-area">堆叠面积图</a>
+              <a href="/components/line/stacked-area">堆叠面积图</a>
             </p>
           </div>
           <div className="gallery-item-box-li">
@@ -240,7 +240,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/line/stacked-line">堆叠折线图</a>
+              <a href="/components/line/stacked-line">堆叠折线图</a>
             </p>
           </div>
           <div className="gallery-item-box-li">
@@ -250,7 +250,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/line/step">阶梯图</a>
+              <a href="/components/line/step">阶梯图</a>
             </p>
           </div>
         </div>
@@ -259,7 +259,7 @@ export default function() {
           <h2 id="折线柱状图">折线柱状图</h2>
         </div>
         <div
-          class="gallery-item-box"
+          className="gallery-item-box"
           style={{ gridTemplateColumns: 'repeat(3,33.3333%)' }}
         >
           <div className="gallery-item-box-li">
@@ -269,7 +269,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/linebar/basic">基础折线柱状图</a>
+              <a href="/components/linebar/basic">基础折线柱状图</a>
             </p>
           </div>
           <div className="gallery-item-box-li">
@@ -279,7 +279,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/linebar/stepbar">阶梯柱状图</a>
+              <a href="/components/linebar/stepbar">阶梯柱状图</a>
             </p>
           </div>
         </div>
@@ -287,7 +287,7 @@ export default function() {
         <h2 id="饼图">饼图</h2>
 
         <div
-          class="gallery-item-box"
+          className="gallery-item-box"
           style={{ gridTemplateColumns: 'repeat(3,33.3333%)' }}
         >
           <div className="gallery-item-box-li">
@@ -297,7 +297,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/pie/basic">饼图</a>
+              <a href="/components/pie/basic">饼图</a>
             </p>
           </div>
           <div className="gallery-item-box-li">
@@ -307,7 +307,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/pie/donut">环形图</a>
+              <a href="/components/pie/donut">环形图</a>
             </p>
           </div>
           <div className="gallery-item-box-li">
@@ -317,7 +317,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/pie/nested">嵌套饼图</a>
+              <a href="/components/pie/nested">嵌套饼图</a>
             </p>
           </div>
           <div className="gallery-item-box-li">
@@ -327,12 +327,12 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/pie/nightingale">南丁格尔玫瑰图</a>
+              <a href="/components/pie/nightingale">南丁格尔玫瑰图</a>
             </p>
           </div>
         </div>
         <div
-          class="gallery-item-box"
+          className="gallery-item-box"
           style={{ gridTemplateColumns: 'repeat(3,33.3333%)' }}
         >
           <div className="gallery-item-box-li">
@@ -342,7 +342,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/pie/rose">同色系玫瑰图</a>
+              <a href="/components/pie/rose">同色系玫瑰图</a>
             </p>
           </div>
         </div>
@@ -350,7 +350,7 @@ export default function() {
         <h2 id="仪表盘">仪表盘</h2>
 
         <div
-          class="gallery-item-box"
+          className="gallery-item-box"
           style={{ gridTemplateColumns: 'repeat(3,33.3333%)' }}
         >
           <div className="gallery-item-box-li">
@@ -360,7 +360,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/gauge/basic">基础仪表盘</a>
+              <a href="/components/gauge/basic">基础仪表盘</a>
             </p>
           </div>
           <div className="gallery-item-box-li">
@@ -370,7 +370,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/gauge/state">状态仪表盘</a>
+              <a href="/components/gauge/state">状态仪表盘</a>
             </p>
           </div>
         </div>
@@ -378,7 +378,7 @@ export default function() {
         <h2 id="雷达图">雷达图</h2>
 
         <div
-          class="gallery-item-box"
+          className="gallery-item-box"
           style={{ gridTemplateColumns: 'repeat(3,33.3333%)' }}
         >
           <div className="gallery-item-box-li">
@@ -388,7 +388,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/radar/basic">基础雷达图</a>
+              <a href="/components/radar/basic">基础雷达图</a>
             </p>
           </div>
           <div className="gallery-item-box-li">
@@ -398,7 +398,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/radar/circle">圆形雷达图</a>
+              <a href="/components/radar/circle">圆形雷达图</a>
             </p>
           </div>
         </div>
@@ -406,7 +406,7 @@ export default function() {
         <h2 id="散点图">散点图</h2>
 
         <div
-          class="gallery-item-box"
+          className="gallery-item-box"
           style={{ gridTemplateColumns: 'repeat(3,33.3333%)' }}
         >
           <div className="gallery-item-box-li">
@@ -416,7 +416,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/scatter/basic">散点图</a>
+              <a href="/components/scatter/basic">散点图</a>
             </p>
           </div>
           <div className="gallery-item-box-li">
@@ -426,7 +426,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/scatter/bubble">气泡图</a>
+              <a href="/components/scatter/bubble">气泡图</a>
             </p>
           </div>
         </div>
@@ -434,7 +434,7 @@ export default function() {
         <h2 id="漏斗图">漏斗图</h2>
 
         <div
-          class="gallery-item-box"
+          className="gallery-item-box"
           style={{ gridTemplateColumns: 'repeat(3,33.3333%)' }}
         >
           <div className="gallery-item-box-li">
@@ -444,7 +444,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/funnel/basic">基础漏斗图</a>
+              <a href="/components/funnel/basic">基础漏斗图</a>
             </p>
           </div>
         </div>
@@ -452,7 +452,7 @@ export default function() {
         <h2 id="地图">地图</h2>
 
         <div
-          class="gallery-item-box"
+          className="gallery-item-box"
           style={{ gridTemplateColumns: 'repeat(3,33.3333%)' }}
         >
           <div className="gallery-item-box-li">
@@ -462,7 +462,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/map/bubble">气泡地图</a>
+              <a href="/components/map/bubble">气泡地图</a>
             </p>
           </div>
           <div className="gallery-item-box-li">
@@ -472,7 +472,7 @@ export default function() {
               style={{ height: 320 + 'px' }}
             />
             <p style={{ color: '#293c55', margin: '0', marginTop: '12px' }}>
-              <a href="/charts/components/map/choropleth">分级统计地图</a>
+              <a href="/components/map/choropleth">分级统计地图</a>
             </p>
           </div>
         </div>

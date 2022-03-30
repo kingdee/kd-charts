@@ -1,3 +1,8 @@
+---
+order: 0
+title: 介绍
+---
+
 # KDesign Charts
 
 KDesign Charts 是基于金蝶的企业级设计系统 KDesign 实现的 echarts 皮肤，简单易用。
@@ -7,7 +12,7 @@ KDesign Charts 是基于金蝶的企业级设计系统 KDesign 实现的 echarts
 - 提供开箱即用的 丰富的图表类型。
 - 基于 ECharts 开发，强劲的渲染引擎。
 - 优雅专业的可视化设计。
-- 全面的主题化定制
+- 全面的主题化定制。
 
 ## 兼容环境
 
@@ -18,9 +23,9 @@ KDesign Charts 是基于金蝶的企业级设计系统 KDesign 实现的 echarts
 ### 使用 npm 或 yarn 安装
 
 ```bash
-$ npm i @kdcloudjs/kd-charts --save
+$ npm install @kdcloudjs/kd-charts  -S
 # 或者
-$ yarn add @kdcloudjs/kd-charts
+$ yarn add @kdcloudjs/kd-charts -S
 ```
 
 ## 示例

@@ -1,5 +1,5 @@
 ---
-title: 散点图 Scatter Plot
+title: Scatter Plot 散点图
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 60
 ---
 
-# 散点图 Scatter Plot
+# Scatter Plot 散点图
 
 <code src="./.demos/basic.tsx"></code>

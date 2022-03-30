@@ -1,5 +1,5 @@
 ---
-title: 分组柱状图 Grouped Bar
+title: Grouped Bar Chart 分组柱状图
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 10
 ---
 
-# 分组柱状图 Grouped Bar
+# Grouped Bar Chart 分组柱状图
 
 <code src="./.demos/grouped"></code>

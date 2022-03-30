@@ -13,7 +13,6 @@ export default {
   },
   tooltip: {
     formatter: function(params) {
-      console.log(params);
       var result = `<span>${params[0].name}</span>`;
       for (var i = 0; i < params.length; i++) {
         if (i === 0 || i === 2) {
@@ -119,7 +118,6 @@ export default {
         show: false,
         position: 'top',
         formatter: function(params) {
-          //console.log(params)
           return '目标值';
         },
       },

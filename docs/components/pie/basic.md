@@ -1,5 +1,5 @@
 ---
-title: 饼图 Pie chart
+title: Pie chart 饼图
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 30
 ---
 
-# 饼图 Pie chart
+# Pie chart 饼图
 
 <code src="./.demos/basic.tsx"></code>

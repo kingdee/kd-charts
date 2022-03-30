@@ -1,5 +1,5 @@
 ---
-title: 气泡地图 Bubble Map
+title: Bubble Map 气泡地图
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 80
 ---
 
-# 气泡地图 Bubble Map
+# Bubble Map 气泡地图
 
 <code src="./.demos/bubble.tsx"></code>

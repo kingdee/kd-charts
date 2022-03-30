@@ -17,11 +17,11 @@
 
 ```bash
 # npm
-$ npm i kd-visualize -g
+$ npm i @kdcloudjs/kd-visualize -g
 
 
 # yarn
-$ yarn add kd-visualize -S
+$ yarn add @kdcloudjs/kd-visualize -g
 ```
 
 ## 使用
@@ -104,13 +104,13 @@ $  kd-visualize create xxx(项目名称)
 ```bash
 <!-- 引入主题 -->
 //常规色板
-import defaultTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-default.js';
+import defaultTheme from '@kdcloudjs/kd-charts/dist/echarts-theme-default.js';
 //红火夏日
-import redTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-red.js';
+import redTheme from '@kdcloudjs/kd-charts/dist/echarts-theme-red.js';
 //自然舒适
-import naturalTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-natural.js';
+import naturalTheme from '@kdcloudjs/kd-charts/dist/echarts-theme-natural.js';
 //科技色板
-import scienceTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-science.js';
+import scienceTheme from '@kdcloudjs/kd-charts/dist/echarts-theme-science.js';
 
 //注册主题
 echarts.registerTheme('defaultTheme', defaultTheme);

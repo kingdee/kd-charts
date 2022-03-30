@@ -1,5 +1,5 @@
 ---
-title: 堆叠折线图 Stacked Line Chart
+title: Stacked Line Chart 堆叠折线图
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 20
 ---
 
-# 堆叠折线图 Stacked Line Chart
+# Stacked Line Chart 堆叠折线图
 
 <code src="./.demos/stacked-line.tsx"></code>

@@ -1,5 +1,5 @@
 ---
-title: 基础仪表盘 Gauge
+title: Gauge 基础仪表盘
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 40
 ---
 
-# 基础仪表盘 Gauge
+# Gauge 基础仪表盘
 
 <code src="./.demos/basic.tsx"></code>

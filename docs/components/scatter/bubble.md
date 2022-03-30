@@ -1,5 +1,5 @@
 ---
-title: 气泡图 Bubble Chart
+title: Bubble Chart 气泡图
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 60
 ---
 
-# 气泡图 Bubble Chart
+# Bubble Chart 气泡图
 
 <code src="./.demos/bubble.tsx"></code>

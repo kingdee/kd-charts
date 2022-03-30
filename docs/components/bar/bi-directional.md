@@ -1,5 +1,5 @@
 ---
-title: 区间柱状图 Bi-directional Bar
+title: Bi-directional Bar Chart 区间柱状图
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 10
 ---
 
-# 区间柱状图 Bi-directional Bar
+# Bi-directional Bar Chart 区间柱状图
 
 <code src="./.demos/biDirectional"></code>

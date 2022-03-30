@@ -1,5 +1,5 @@
 ---
-title: 曲线图 Smooth Line chart
+title: Smooth Line chart 曲线图
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 20
 ---
 
-# 曲线图 Smooth Line chart
+# Smooth Line chart 曲线图
 
 <code src="./.demos/smooth.tsx"></code>

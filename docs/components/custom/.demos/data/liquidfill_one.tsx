@@ -16,7 +16,6 @@ export default {
       type: 'custom',
       coordinateSystem: 'none',
       renderItem: function(params, api) {
-        console.log(Math.min(api.getWidth(), api.getHeight()) / 2.3);
         return {
           type: 'arc',
           shape: {

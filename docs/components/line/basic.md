@@ -1,5 +1,5 @@
 ---
-title: 折线图 Line chart
+title: Line chart 折线图
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 20
 ---
 
-# 折线图 Line chart
+# Line chart 折线图
 
 <code src="./.demos/basic.tsx"></code>

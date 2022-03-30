@@ -1,5 +1,5 @@
 ---
-title: 折线柱状图 Mixed Line And Bar chart
+title: Mixed Line And Bar chart 折线柱状图
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 30
 ---
 
-# 折线柱状图 Mixed Line And Bar chart
+# Mixed Line And Bar chart 折线柱状图
 
 <code src="./.demos/basic.tsx"></code>

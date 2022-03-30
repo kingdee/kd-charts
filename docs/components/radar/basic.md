@@ -1,5 +1,5 @@
 ---
-title: 基础雷达图 Radar chart
+title: Radar chart 基础雷达图
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 50
 ---
 
-# 基础雷达图 Radar chart
+# Radar chart 基础雷达图
 
 <code src="./.demos/basic.tsx"></code>

@@ -14,11 +14,11 @@
 
 ```bash
 # npm
-$ npm install @kdcloudjs/kd-charts -S --registry=http://npm.kingdee.com
+$ npm i @kdcloudjs/kd-charts -S
 
 
 # yarn
-$ yarn add @kdcloudjs/kd-charts -S --registry=http://npm.kingdee.com
+$ yarn add @kdcloudjs/kd-charts -S
 ```
 
 ## 快速上手
@@ -27,7 +27,7 @@ $ yarn add @kdcloudjs/kd-charts -S --registry=http://npm.kingdee.com
 import React from 'react';
 import * as echarts from 'echarts';
 import ReactECharts from 'echarts-for-react';
-import defaultTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-default.js';//引入主题
+import defaultTheme from '@kdcloudjs/kd-charts/dist/echarts-theme-default.js';//引入主题
 const DefaultOption = {
     xAxis: {
         type: 'category',

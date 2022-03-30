@@ -1,5 +1,5 @@
 ---
-title: 基础漏斗图 funnel Chart
+title: funnel Chart 基础漏斗图
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 70
 ---
 
-# 基础漏斗图 funnel Chart
+# funnel Chart 基础漏斗图
 
 <code src="./.demos/basic.tsx"></code>

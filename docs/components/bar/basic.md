@@ -1,5 +1,5 @@
 ---
-title: 基础柱状图 Basic Bar
+title: Basic Bar Chart 基础柱状图
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 10
 ---
 
-# 基础柱状图 bar
+# Basic Bar Chart 基础柱状图
 
 <code src="./.demos/index.tsx"></code>

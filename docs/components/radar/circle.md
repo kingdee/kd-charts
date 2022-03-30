@@ -1,5 +1,5 @@
 ---
-title: 圆形雷达图 Circle Radar chart
+title: Circle Radar chart 圆形雷达图
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 50
 ---
 
-# 圆形雷达图 Circle Radar chart
+# Circle Radar chart 圆形雷达图
 
 <code src="./.demos/circle.tsx"></code>

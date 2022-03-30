@@ -1,5 +1,5 @@
 ---
-title: 阶梯图 Step Chart
+title: Step Chart 阶梯图
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 20
 ---
 
-# 阶梯图 Step Chart
+# Step Chart 阶梯图
 
 <code src="./.demos/step.tsx"></code>

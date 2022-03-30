@@ -1,5 +1,5 @@
 ---
-title: 嵌套饼图 Nested pie chart
+title: Nested pie chart 嵌套饼图
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 30
 ---
 
-# 嵌套饼图 Nested pie chart
+# Nested pie chart 嵌套饼图
 
 <code src="./.demos/nested"></code>

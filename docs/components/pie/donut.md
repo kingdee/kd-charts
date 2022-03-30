@@ -1,5 +1,5 @@
 ---
-title: 环形图 Donut Chart
+title: Donut Chart 环形图
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 30
 ---
 
-# 环形图 Donut Chart
+# Donut Chart 环形图
 
 <code src="./.demos/donut"></code>

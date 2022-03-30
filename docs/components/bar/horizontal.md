@@ -1,5 +1,5 @@
 ---
-title: 横向柱状图 Horizontal Bar
+title: Horizontal Bar Chart 横向柱状图
 nav:
   title: 组件
   path: /components
@@ -9,6 +9,6 @@ group:
   order: 10
 ---
 
-# 横向柱状图 Horizontal Bar
+# Horizontal Bar Chart 横向柱状图
 
 <code src="./.demos/horizontal"></code>

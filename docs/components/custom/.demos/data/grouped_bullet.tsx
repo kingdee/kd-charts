@@ -114,7 +114,6 @@ export default {
         show: false,
         position: 'right',
         formatter: function(params) {
-          //console.log(params)
           return '目标值';
         },
       },

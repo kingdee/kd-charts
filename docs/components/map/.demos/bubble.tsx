@@ -1,14 +1,12 @@
 import React from 'react';
 import { DefaultOption } from './data/bubble';
 import * as echarts from 'echarts';
-import defaultTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-default.js';
+import defaultTheme from '@kdcloudjs/kd-charts/dist/echarts-theme-default.js';
 import ReactECharts from 'echarts-for-react';
+import chinaJson from '../../../../src/theme/src/common/map/json/china.json';
 function index() {
   echarts.registerTheme('defaultTheme', defaultTheme);
-  echarts.registerMap(
-    'china',
-    require('../../../../src/theme/src/common/map/json/china.json'),
-  ); //将地图数据注册到echart对象上
+  echarts.registerMap('china', chinaJson); //将地图数据注册到echart对象上
   return (
     <div>
       <ReactECharts

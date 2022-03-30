@@ -2,13 +2,38 @@ import { defineConfig } from 'dumi';
 
 export default defineConfig({
   title: '可视化中心',
-  // favicon:
-  //   'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
+  favicon: 'https://www.kingdee.design/theme/favicon.ico',
   // logo:
   //   'https://user-images.githubusercontent.com/9554297/83762004-a0761b00-a6a9-11ea-83b4-9c8ff721d4b8.png',
   outputPath: 'docs-dist',
-  publicPath: '/charts/',
-  base: '/charts/',
+  publicPath: '/',
+  // base: '/charts/',
+  dynamicImport: {
+    loading: '@/Loading',
+  },
+  chunks: ['vendors', 'umi'],
+  chainWebpack: function(config, { webpack }) {
+    config.merge({
+      optimization: {
+        splitChunks: {
+          chunks: 'all',
+          minSize: 30000,
+          minChunks: 3,
+          automaticNameDelimiter: '.',
+          cacheGroups: {
+            vendor: {
+              name: 'vendors',
+              test({ resource }: any) {
+                return /[\\/]node_modules[\\/]/.test(resource);
+              },
+              priority: 10,
+            },
+          },
+        },
+      },
+    });
+  },
+
   mode: 'site',
   styles: [
     `.markdown{padding: 0 20px 30px 60px;max-width: initial !important;};`,
@@ -20,10 +45,6 @@ export default defineConfig({
   resolve: {
     includes: ['docs', 'src', 'images'],
   },
-  // dynamicImport: {
-  //   loading: '@/Loading',
-  // },
-
   navs: [
     {
       title: '指南',
