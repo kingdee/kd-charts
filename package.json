@@ -1,0 +1,73 @@
+{
+  "name": "@kdcloudjs/kd-charts",
+  "version": "1.1.1",
+  "homepage": "https://charts.kingdee.design",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kdcloudone/kd-charts.git"
+  },
+  "license": "Apache-2.0",
+  "scripts": {
+    "start": "dumi dev",
+    "docs:build": "dumi build && gulp copy-docs",
+    "docs:deploy": "gh-pages -d docs-dist",
+    "build": "father-build && gulp copy",
+    "deploy": "npm run docs:build && npm run docs:deploy",
+    "release": "npm run build && npm publish",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage",
+    "pub": "npm publish --access public"
+  },
+  "files": [
+    "dist",
+    "theme"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "typings": "dist/index.d.ts",
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "dependencies": {
+    "@kdcloudjs/kd-charts": "^1.0.8",
+    "@kdcloudjs/kdesign": "^1.0.2",
+    "@types/echarts": "^4.9.4",
+    "ahooks": "^2.10.0",
+    "antd": "^4.15.1",
+    "browserslist": "^4.19.1",
+    "echarts": "^5.0.2",
+    "echarts-for-react": "^3.0.1",
+    "echarts-liquidfill": "^3.0.0",
+    "echarts-wordcloud": "^2.0.0",
+    "gulp": "^4.0.2",
+    "react": "^16.12.0",
+    "react-countup": "^4.4.0",
+    "tslib": "^2.2.0"
+  },
+  "devDependencies": {
+    "@umijs/test": "^3.0.5",
+    "dumi": "^1.1.38",
+    "father-build": "^1.17.2",
+    "gh-pages": "^3.0.0",
+    "lint-staged": "^10.0.7",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.2",
+    "yorkie": "^2.0.0"
+  },
+  "description": "KDesign Charts 是基于金蝶的企业级设计系统 KDesign 实现的echarts皮肤，简单易用。",
+  "bugs": {
+    "url": "https://github.com/kdcloudone/kd-charts/issues"
+  },
+  "directories": {
+    "doc": "docs"
+  }
+}
