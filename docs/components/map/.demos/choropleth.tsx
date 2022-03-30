@@ -1,7 +1,7 @@
 import React from 'react';
 import { DefaultOption } from './data/choropleth';
 import * as echarts from 'echarts';
-import defaultTheme from '@kdcloudjs/kd-charts/dist/echarts-theme-default.js';
+import defaultTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-default.js';
 import ReactECharts from 'echarts-for-react';
 import chinaJson from '../../../../src/theme/src/common/map/json/china.json';
 function index() {

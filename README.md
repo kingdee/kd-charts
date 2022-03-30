@@ -34,7 +34,7 @@ $ yarn add @kdcloudjs/kd-charts -S
 import React from 'react';
 import * as echarts from 'echarts';
 import ReactECharts from 'echarts-for-react';
-import defaultTheme from '@kdcloudjs/kd-charts/dist/echarts-theme-default.js';
+import defaultTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-default.js';
 const DefaultOption = {
   xAxis: {
     type: 'category',

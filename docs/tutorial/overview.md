@@ -47,14 +47,14 @@ import * as echarts from 'echarts';
 import ReactECharts from 'echarts-for-react';
 import { Radio, Switch } from '@kdcloudjs/kdesign';
 import '@kdcloudjs/kdesign/dist/kdesign.css';
-import defaultTheme from '@kdcloudjs/kd-charts/dist/echarts-theme-default.js';
-import redTheme from '@kdcloudjs/kd-charts/dist/echarts-theme-red.js';
-import naturalTheme from '@kdcloudjs/kd-charts/dist/echarts-theme-natural.js';
-import scienceTheme from '@kdcloudjs/kd-charts/dist/echarts-theme-science.js';
-import defaultThemeDark from '@kdcloudjs/kd-charts/dist/echarts-theme-default-dark.js';
-import redThemeDark from '@kdcloudjs/kd-charts/dist/echarts-theme-red-dark.js';
-import naturalThemeDark from '@kdcloudjs/kd-charts/dist/echarts-theme-natural-dark.js';
-import scienceThemeDark from '@kdcloudjs/kd-charts/dist/echarts-theme-science-dark.js';
+import defaultTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-default.js';
+import redTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-red.js';
+import naturalTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-natural.js';
+import scienceTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-science.js';
+import defaultThemeDark from '@kdcloudjs/kd-charts/theme/echarts-theme-default-dark.js';
+import redThemeDark from '@kdcloudjs/kd-charts/theme/echarts-theme-red-dark.js';
+import naturalThemeDark from '@kdcloudjs/kd-charts/theme/echarts-theme-natural-dark.js';
+import scienceThemeDark from '@kdcloudjs/kd-charts/theme/echarts-theme-science-dark.js';
 
 import chinaJson from '../../src/theme/src/common/map/json/china.json';
 

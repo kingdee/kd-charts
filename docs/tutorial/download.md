@@ -119,7 +119,7 @@ export default () => {
 ```jsx | pure
 
 <!-- 引入 defaultTheme 主题 -->
-import defaultTheme from '@kdcloudjs/kd-charts/dist/echarts-theme-default.js'
+import defaultTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-default.js'
 
 
 //注册主题

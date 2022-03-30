@@ -18,7 +18,7 @@
 
 <script>
 import ECharts from 'vue-echarts/components/ECharts'
-import defaultTheme from '@kdcloudjs/kd-charts/dist/echarts-theme-default.js';
+import defaultTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-default.js';
 ECharts.registerTheme('defaultTheme', defaultTheme); //引入主题
 export default {
   components: {
