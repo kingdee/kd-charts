@@ -11,7 +11,9 @@ export default () => {
   const addGio = (gioType, href) => {
     gio && gio('track', gioType);
     console.log(gioType, href);
-    window.open('https://kui.kingdee.com/assets/other/theme/' + href + '.js');
+    window.open(
+      ' https://unpkg.com/@kdcloudjs/kd-charts/theme/' + href + '.js',
+    );
   };
 
   return (
