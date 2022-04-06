@@ -12,7 +12,7 @@ import SearchBar from './components/SearchBar';
 
 const Layout: React.FC<IRouteComponentProps> = ({ children, location }) => {
   if (location.pathname === '/') {
-    window.location.href = '/charts/tutorial';
+    window.location.href = '/tutorial';
   }
   const {
     config: { mode, repository },
