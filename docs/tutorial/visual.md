@@ -21,7 +21,7 @@ $ npm i @kdcloudjs/kd-visualize -g
 
 
 # yarn
-$ yarn add @kdcloudjs/kd-visualize -g
+$ yarn global add @kdcloudjs/kd-visualize
 ```
 
 ## 使用
@@ -29,6 +29,10 @@ $ yarn add @kdcloudjs/kd-visualize -g
 ```bash
 $  kd-visualize create xxx(项目名称)
 ```
+
+## 效果展示
+
+<img src="/charts/demo/infor.png" height="257px" />
 
 ## 快速上手
 
