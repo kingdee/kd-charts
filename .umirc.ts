@@ -1,10 +1,9 @@
 import { defineConfig } from 'dumi';
 
-const basePath = process.env.NODE_ENV === 'production' ? '/pro/site/' : '/';
 export default defineConfig({
   title: '可视化中心',
   favicon: 'https://www.kingdee.design/theme/favicon.ico',
-  logo: basePath + 'images/logo.png',
+  logo: '/images/logo.png',
   outputPath: 'docs-dist',
   publicPath: '/',
   // base: '/charts/',
