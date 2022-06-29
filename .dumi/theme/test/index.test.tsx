@@ -1,12 +1,13 @@
 import '@testing-library/jest-dom';
 import React from 'react';
-import { render, queryByAttribute, fireEvent } from '@testing-library/react';
+import { render, queryByAttribute, queryAllByAttribute, fireEvent } from '@testing-library/react';
 import type { MemoryHistory} from '@umijs/runtime';
 import { createMemoryHistory, Router } from '@umijs/runtime';
 import { context as Context } from 'dumi/theme';
 import SourceCode from '../builtins/SourceCode';
 import Alert from '../builtins/Alert';
 import Badge from '../builtins/Badge';
+import Tree from '../builtins/Tree';
 import Previewer from '../builtins/Previewer';
 import API from '../builtins/API';
 import Layout from '../layout';
@@ -45,7 +46,7 @@ describe('default theme', () => {
       title: 'test',
       logo: '/',
       mode: 'site' as 'doc' | 'site',
-      repository: { branch: 'mater' },
+      repository: { branch: 'master' },
     },
     meta: {},
     menu: [
@@ -77,6 +78,16 @@ describe('default theme', () => {
       },
     ],
     base: '/',
+    apis: {
+      MultipleExports: {
+        Other: [
+          {
+            identifier: 'other',
+            type: 'string',
+          },
+        ],
+      },
+    }
   };
   const baseProps = {
     history,
@@ -86,6 +97,9 @@ describe('default theme', () => {
   };
 
   it('should render site home page', () => {
+    const attrName = 'data-prefers-color';
+    document.documentElement.setAttribute(attrName, 'light');
+    localStorage.setItem('dumi:prefers-color', 'light');
     const wrapper = ({ children }) => (
       <Context.Provider
         value={{
@@ -130,10 +144,31 @@ describe('default theme', () => {
     expect(getByText('Feat2')).not.toBeNull();
 
     // trigger mobile menu display
-    queryByAttribute('class', container, '__dumi-default-navbar-toggle').click();
+    queryByAttribute('class', container, '__dumi-kdesign-navbar-toggle').click();
 
     // expect sidemenu display for mobile
     expect(queryByAttribute('data-mobile-show', container, 'true')).not.toBeNull();
+
+    // expect dark render and click success
+    const menu = queryByAttribute('class', container, '__dumi-kdesign-menu');
+    const sunMenu = queryByAttribute('class', menu, '__dumi-kdesign-dark-sun __dumi-kdesign-dark-switch-active');
+    expect(sunMenu).not.toBeNull();
+    const moonMenu = queryByAttribute('class', container, '__dumi-kdesign-dark-moon');
+    expect(moonMenu).not.toBeNull();
+    moonMenu.click();
+    expect(document.documentElement.getAttribute(attrName)).toEqual('dark');
+    expect(queryByAttribute('data-mobile-show', container, 'true')).toBeNull();
+
+    const navbar = queryByAttribute('class', container, '__dumi-kdesign-navbar');
+    const moonNav = queryByAttribute('class', navbar, '__dumi-kdesign-dark-moon __dumi-kdesign-dark-switch-active');
+    moonNav.click();
+    expect(queryByAttribute('class', navbar, '__dumi-kdesign-dark-switch __dumi-kdesign-dark-switch-open')).not.toBeNull();
+    const switchList = queryByAttribute('class', navbar, '__dumi-kdesign-dark-switch-list');
+    expect(switchList).not.toBeNull();
+    queryByAttribute('class', switchList, '__dumi-kdesign-dark-sun').click();
+    expect(document.documentElement.getAttribute(attrName)).toEqual('light');
+    expect(queryByAttribute('class', navbar, '__dumi-kdesign-dark-switch-list')).toBeNull();
+    expect(queryByAttribute('class', navbar, '__dumi-kdesign-dark-switch __dumi-kdesign-dark-switch-open')).toBeNull();
   });
 
   it('should render documentation page', async () => {
@@ -201,6 +236,20 @@ describe('default theme', () => {
             <SourceCode code={code} lang="javascript" />
             <Alert type="info">Alert</Alert>
             <Badge type="info">Badge</Badge>
+            <Tree>
+              <ul>
+                <li>
+                  1
+                  <small>test1</small>
+                  <ul>
+                    <li>
+                      1-1
+                      <small>test1-1</small>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </Tree>
             <Previewer
               title="demo-1"
               identifier="demo-1"
@@ -256,7 +305,7 @@ describe('default theme', () => {
 
     // toggle side menu display
     fireEvent(
-      container.querySelector('.__dumi-default-navbar-toggle'),
+      container.querySelector('.__dumi-kdesign-navbar-toggle'),
       new MouseEvent('click', {
         bubbles: true,
         cancelable: true,
@@ -271,6 +320,19 @@ describe('default theme', () => {
       }),
     );
 
+    // test tree render
+    expect(queryAllByAttribute('class', container, '__dumi-site-tree-icon icon-minus-square').length).toBe(2);
+    expect(queryAllByAttribute('class', container, '__dumi-site-tree-icon icon-folder-open').length).toBe(2);
+    expect(queryAllByAttribute('class', container, '__dumi-site-tree-icon icon-file').length).toBe(1);
+
+    expect(getByText('<root>')).toHaveClass('rc-tree-title');
+    expect(getByText('1')).toHaveClass('rc-tree-title');
+    expect(getByText('test1')).not.toBeNull();
+
+    getAllByTitle('<root>')[0].click();
+    expect(queryAllByAttribute('class', container, '__dumi-site-tree-icon icon-plus-square').length).toBe(1);
+    expect(queryAllByAttribute('class', container, '__dumi-site-tree-icon icon-folder').length).toBe(1);
+
     // expect SourceCode highlight
     expect(getByText('console')).toHaveClass('token');
 
@@ -278,7 +340,7 @@ describe('default theme', () => {
     expect(getByText('Alert')).toHaveAttribute('type', 'info');
 
     // expect Badge be rendered
-    expect(getByText('Badge')).toHaveClass('__dumi-default-badge');
+    expect(getByText('Badge')).toHaveClass('__dumi-kdesign-badge');
 
     // expect Previewer be rendered
     expect(getByText('demo-1')).not.toBeNull();

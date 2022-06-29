@@ -11,19 +11,19 @@ export default (props: { route: any }) => {
 
   return (
     props.route.meta.examplePath && (
-      <div className="__dumi-default-example-wrapper">
-        <div className="__dumi-default-example-wrapper-toolbar">
+      <div className="__dumi-kdesign-example-wrapper">
+        <div className="__dumi-kdesign-example-wrapper-toolbar">
           {props.route.meta.description || props.route.meta.title}
           <span>
             <button
-              className="__dumi-default-icon"
+              className="__dumi-kdesign-icon"
               onClick={() => elm.current.contentWindow.location.reload()}
             />
             <a
               target="_blank"
               rel="noopener noreferrer"
               href={props.route.meta.examplePath}
-              className="__dumi-default-icon"
+              className="__dumi-kdesign-icon"
             />
           </span>
         </div>

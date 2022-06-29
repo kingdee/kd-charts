@@ -1,8 +1,8 @@
-import React, { useState, useContext, useRef } from 'react';
+import React, { useState, useContext, useRef, useEffect } from 'react';
 import Tabs, { TabPane } from 'rc-tabs';
 // @ts-ignore
 import { history } from 'dumi';
-import type { IPreviewerComponentProps} from 'dumi/theme';
+import type { IPreviewerComponentProps } from 'dumi/theme';
 import {
   context,
   useCodeSandbox,
@@ -13,7 +13,8 @@ import {
   useDemoUrl,
   useTSPlaygroundUrl,
   Link,
-  AnchorLink
+  AnchorLink,
+  usePrefersColor,
 } from 'dumi/theme';
 import type { ICodeBlockProps } from './SourceCode';
 import SourceCode from './SourceCode';
@@ -48,6 +49,10 @@ export interface IPreviewerProps extends IPreviewerComponentProps {
    * replace builtin demo url
    */
   demoUrl?: string;
+  /**
+   * control action bar render
+   */
+  actionBarRender?: (actionBarNode: React.ReactNode) => React.ReactNode;
 }
 
 /**
@@ -78,7 +83,9 @@ const Previewer: React.FC<IPreviewerProps> = oProps => {
   const openRiddle = useRiddle(props.hideActions?.includes('RIDDLE') ? null : props);
   const [execMotions, isMotionRunning] = useMotions(props.motions || [], demoRef.current);
   const [copyCode, copyStatus] = useCopy();
-  const [currentFile, setCurrentFile] = useState('_');
+  const [currentFile, setCurrentFile] = useState(() =>
+    props.sources._ ? '_' : Object.keys(props.sources)[0],
+  );
   const [sourceType, setSourceType] = useState(
     getSourceType(currentFile, props.sources[currentFile]),
   );
@@ -87,6 +94,14 @@ const Previewer: React.FC<IPreviewerProps> = oProps => {
   const currentFileCode =
     props.sources[currentFile][sourceType] || props.sources[currentFile].content;
   const playgroundUrl = useTSPlaygroundUrl(locale, currentFileCode);
+  const iframeRef = useRef<HTMLIFrameElement>();
+  const [color] = usePrefersColor();
+  const { actionBarRender = o => o } = props;
+
+  // re-render iframe if prefers color changed
+  useEffect(() => {
+    setIframeKey(Math.random());
+  }, [color]);
 
   function handleFileChange(filename: string) {
     setCurrentFile(filename);
@@ -98,8 +113,8 @@ const Previewer: React.FC<IPreviewerProps> = oProps => {
       style={props.style}
       className={[
         props.className,
-        '__dumi-default-previewer',
-        isActive ? '__dumi-default-previewer-target' : '',
+        '__dumi-kdesign-previewer',
+        isActive ? '__dumi-kdesign-previewer-target' : '',
       ]
         .filter(Boolean)
         .join(' ')}
@@ -107,10 +122,10 @@ const Previewer: React.FC<IPreviewerProps> = oProps => {
       data-debug={props.debug || undefined}
       data-iframe={props.iframe || undefined}
     >
-      {props.iframe && <div className="__dumi-default-previewer-browser-nav" />}
+      {props.iframe && <div className="__dumi-kdesign-previewer-browser-nav" />}
       <div
         ref={demoRef}
-        className="__dumi-default-previewer-demo"
+        className="__dumi-kdesign-previewer-demo"
         style={{
           transform: props.transform ? 'translate(0, 0)' : undefined,
           padding: props.compact || (props.iframe && props.compact !== false) ? '0' : undefined,
@@ -126,12 +141,13 @@ const Previewer: React.FC<IPreviewerProps> = oProps => {
             }}
             key={iframeKey}
             src={demoUrl}
+            ref={iframeRef}
           />
         ) : (
           props.children
         )}
       </div>
-      <div className="__dumi-default-previewer-desc" data-title={props.title}>
+      <div className="__dumi-kdesign-previewer-desc" data-title={props.title}>
         {props.title && <AnchorLink to={`#${props.identifier}`}>{props.title}</AnchorLink>}
         {props.description && (
           <div
@@ -140,82 +156,86 @@ const Previewer: React.FC<IPreviewerProps> = oProps => {
           />
         )}
       </div>
-      <div className="__dumi-default-previewer-actions">
-        {openCSB && (
-          <button
-            title="Open demo on CodeSandbox.io"
-            className="__dumi-default-icon"
-            role="codesandbox"
-            onClick={openCSB}
-          />
-        )}
-        {openRiddle && (
-          <button
-            title="Open demo on Riddle"
-            className="__dumi-default-icon"
-            role="riddle"
-            onClick={openRiddle}
-          />
-        )}
-        {props.motions && (
-          <button
-            title="Execute motions"
-            className="__dumi-default-icon"
-            role="motions"
-            disabled={isMotionRunning}
-            onClick={() => execMotions()}
-          />
-        )}
-        {props.iframe && (
-          <button
-            title="Reload demo iframe page"
-            className="__dumi-default-icon"
-            role="refresh"
-            onClick={() => setIframeKey(Math.random())}
-          />
-        )}
-        {!props.hideActions?.includes('EXTERNAL') && (
-          <Link target="_blank" to={demoUrl}>
+      <div className="__dumi-kdesign-previewer-actions">
+        {actionBarRender(
+          <>
+            {openCSB && (
+              <button
+                title="Open demo on CodeSandbox.io"
+                className="__dumi-kdesign-icon"
+                role="codesandbox"
+                onClick={openCSB}
+              />
+            )}
+            {openRiddle && (
+              <button
+                title="Open demo on Riddle"
+                className="__dumi-kdesign-icon"
+                role="riddle"
+                onClick={openRiddle}
+              />
+            )}
+            {props.motions && (
+              <button
+                title="Execute motions"
+                className="__dumi-kdesign-icon"
+                role="motions"
+                disabled={isMotionRunning}
+                onClick={() => execMotions()}
+              />
+            )}
+            {props.iframe && (
+              <button
+                title="Reload demo iframe page"
+                className="__dumi-kdesign-icon"
+                role="refresh"
+                onClick={() => setIframeKey(Math.random())}
+              />
+            )}
+            {!props.hideActions?.includes('EXTERNAL') && (
+              <Link target="_blank" to={demoUrl}>
+                <button
+                  title="Open demo in new tab"
+                  className="__dumi-kdesign-icon"
+                  role="open-demo"
+                  type="button"
+                />
+              </Link>
+            )}
+            <span />
             <button
-              title="Open demo in new tab"
-              className="__dumi-default-icon"
-              role="open-demo"
-              type="button"
+              title="Copy source code"
+              className="__dumi-kdesign-icon"
+              role="copy"
+              data-status={copyStatus}
+              onClick={() => copyCode(currentFileCode)}
             />
-          </Link>
-        )}
-        <span />
-        <button
-          title="Copy source code"
-          className="__dumi-default-icon"
-          role="copy"
-          data-status={copyStatus}
-          onClick={() => copyCode(currentFileCode)}
-        />
-        {sourceType === 'tsx' && showSource && (
-          <Link target="_blank" to={playgroundUrl}>
+            {sourceType === 'tsx' && showSource && (
+              <Link target="_blank" to={playgroundUrl}>
+                <button
+                  title="Get JSX via TypeScript Playground"
+                  className="__dumi-kdesign-icon"
+                  role="change-tsx"
+                  type="button"
+                />
+              </Link>
+            )}
             <button
-              title="Get JSX via TypeScript Playground"
-              className="__dumi-default-icon"
-              role="change-tsx"
+              title="Toggle source code panel"
+              className={`__dumi-kdesign-icon${showSource ? ' __dumi-kdesign-btn-expand' : ''}`}
+              role="source"
               type="button"
+              onClick={() => setShowSource(!showSource)}
             />
-          </Link>
+          </>,
         )}
-        <button
-          title="Toggle source code panel"
-          className={`__dumi-default-icon${showSource ? ' __dumi-default-btn-expand' : ''}`}
-          role="source"
-          type="button"
-          onClick={() => setShowSource(!showSource)}
-        />
       </div>
       {showSource && (
-        <div className="__dumi-default-previewer-source-wrapper">
+        <div className="__dumi-kdesign-previewer-source-wrapper">
           {!isSingleFile && (
             <Tabs
-              className="__dumi-default-previewer-source-tab"
-              prefixCls="__dumi-default-tabs"
+              className="__dumi-kdesign-previewer-source-tab"
+              prefixCls="__dumi-kdesign-tabs"
               moreIcon="···"
               defaultActiveKey={currentFile}
               onChange={handleFileChange}
@@ -232,7 +252,7 @@ const Previewer: React.FC<IPreviewerProps> = oProps => {
               ))}
             </Tabs>
           )}
-          <div className="__dumi-default-previewer-source">
+          <div className="__dumi-kdesign-previewer-source">
             <SourceCode code={currentFileCode} lang={sourceType} showCopy={false} />
           </div>
         </div>

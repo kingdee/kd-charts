@@ -1,132 +1,107 @@
-import { FC, MouseEvent, useEffect, useRef, useState } from 'react';
-import React, { useContext, RefObject } from 'react';
+import type { FC } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { context, Link, NavLink } from 'dumi/theme';
-import { Tooltip } from '@kdcloudjs/kdesign';
-import { useHistory } from 'react-router-dom';
-import usePopper from '../../../node_modules/@kdcloudjs/kdesign/lib/_utils/usePopper';
+import Menus from './Menus';
+import classnames from 'classnames';
+
+import '@kdcloudjs/kdesign/dist/kdesign.css';
 import './Navbar.less';
 
 interface INavbarProps {
   location: any;
-  isTransparent: boolean;
   navPrefix?: React.ReactNode;
-  onMobileMenuClick: (ev: MouseEvent<HTMLButtonElement>) => void;
-  [key: string]: any;
+  darkPrefix?: React.ReactNode;
 }
 
-const Navbar: FC<INavbarProps> = ({
-  onMobileMenuClick,
-  navPrefix,
-  location,
-  isTransparent,
-  ...resProps
-}) => {
+const Navbar: FC<INavbarProps> = ({ navPrefix, location }) => {
   const {
     base,
-    config: { mode, title, logo },
+    config: { mode, logo: logos, title },
     nav: navItems,
   } = useContext(context);
-  const history = useHistory();
-  const [visible, setVisible] = useState<boolean | undefined>(undefined);
-  const pathname = window.location.pathname;
+
+  const { pathname } = location;
+
+  const needPaths = ['/', '/resource'];
+  const isKDesign = title === 'KDesign';
+  const needTransparent = isKDesign && needPaths.includes(pathname);
+
+  const [transparent, setTransparent] = useState(false);
+  useEffect(() => {
+    needTransparent && window.scrollY === 0 && setTransparent(true);
+  }, []);
+  const handleNavbarMouseEnter = () => {
+    needTransparent && setTransparent(false);
+  };
+  const handleNavbarMouseLeave = () => {
+    needTransparent && window.scrollY === 0 && setTransparent(true);
+  };
+
+  const [hide, setHide] = useState(false);
+  useEffect(() => {
+    if (needTransparent) {
+      const hideNavbar = (evt: Record<string, any>) => {
+        setHide(evt.wheelDelta <= 0);
+        setTransparent(window.scrollY === 0);
+      };
+      document.addEventListener('mousewheel', hideNavbar);
+
+      return () => document.removeEventListener('mousewheel', hideNavbar);
+    }
+  }, [needTransparent]);
+  const [logo, whiteLogo] = (logos as string).split(',');
 
   return (
     <div
-      className={isTransparent ? 'navbar transparent' : 'navbar'}
-      {...resProps}
+      className={classnames('__dumi-kdesign-navbar', { transparent, hide })}
+      data-mode={mode}
+      onMouseEnter={handleNavbarMouseEnter}
+      onMouseLeave={handleNavbarMouseLeave}
     >
-      <button className="navbar-toggle" onClick={onMobileMenuClick} />
-      <div className="navbar-logo" onClick={() => history.push('/')} />
-      <div className="navbar-charts">
+      <div className="__dumi-kdesign-navbar-brand">
+        <Menus hiddenInPc={title === 'KDesign'} />
+        {/* logo */}
+        <Link
+          className="__dumi-kdesign-navbar-logo"
+          style={{
+            backgroundImage: transparent
+              ? whiteLogo && `url('${whiteLogo}')`
+              : logo && `url('${logo}')`,
+          }}
+          to={base}
+        ></Link>
+      </div>
+      <div className="__dumi-kdesign-navbar-main">
         <nav>
-          {navItems.map((nav, i) => {
-            if (nav.show !== undefined && nav.show === false) {
-              return null;
-            }
-            let flag = false;
-            if (nav.path) {
-              if (
-                (pathname.startsWith('/charts/tutorial') && nav.path === '/tutorial') ||
-                (pathname.startsWith('/charts/components') && nav.path === '/components')
-              ) {
-                flag = true;
-              }
-            }
-            const base = (
-              <span
-                key={nav.title + i}
-                className={flag ? 'active nav-title' : 'nav-title'}
-              >
-              {nav.path ? (
-                <span
-                  onClick={() => {
-                    if (nav.path) {
-                      history.push(nav.path);
-                    }
-                  }}
-                >
-                  {nav.title}
-                </span>
-              ) : (
-                nav.title
-              )}
-            </span>
+          {/* nav */}
+          {navItems.map((nav) => {
+            const child = Boolean(nav.children?.length) && (
+              <ul>
+                {nav.children.map((item) => (
+                  <li key={item.path}>
+                    <NavLink to={item.path}>{item.title}</NavLink>
+                  </li>
+                ))}
+              </ul>
             );
 
-            if (Boolean(nav.payload?.length)) {
-              const sonItem = (
-                <div className="nav-tooltip">
-                  {nav.payload.map((son: any, si: number) => {
-                    return (
-                      <div
-                        className="nav-tooltip-item"
-                        key={son.title + si}
-                        onClick={() => {
-                          setVisible(false);
-                          setTimeout(() => {
-                            setVisible(undefined);
-                          }, 300);
-                        }}
-                      >
-                        <div className="nav-tooltip-item-top">{son.title}</div>
-                        {son.children.map((s: any, ssi: number) => {
-                          return (
-                            <div
-                              className="nav-tooltip-item-text"
-                              key={s.title + ssi}
-                              onClick={() => {
-                                if (s.inner !== undefined && s.inner === false) {
-                                  window.open(s.path);
-                                } else {
-                                  history.push(s.path);
-                                }
-                              }}
-                            >
-                              {s.title}
-                            </div>
-                          );
-                        })}
-                      </div>
-                    );
-                  })}
-                </div>
-              );
-
-              return usePopper(base, sonItem, {
-                arrow: false,
-                placement: 'bottomLeft',
-                prefixCls: 'kd-tooltip',
-                trigger: 'hover',
-                visible,
-              });
-            } else {
-              return base;
-            }
+            return (
+              <span key={nav.title || nav.path}>
+                {nav.path ? (
+                  <NavLink to={nav.path} key={nav.path}>
+                    {nav.title}
+                  </NavLink>
+                ) : (
+                  nav.title
+                )}
+                {child}
+              </span>
+            );
           })}
         </nav>
-        <div className="navbar-search">
+        <div className="__dumi-kdesign-right">
           {navPrefix}
-          <span className="version">v 2.0.0</span>
+          <span className="__dumi-kdesign-version">V2.0.0</span>
         </div>
       </div>
     </div>
