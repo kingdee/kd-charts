@@ -32,7 +32,7 @@ $  kd-visualize create xxx(项目名称)
 
 ## 效果展示
 
-<img src="/charts/demo/infor_g.gif" height="600px" />
+[<img src="/charts/demo/infor_g.gif" height="600px" />]
 
 ## 快速上手
 
