@@ -141,7 +141,7 @@ const Layout: React.FC<IRouteComponentProps> = ({ children, location }) => {
           />
         )}
       </div>
-      {meta.gapless && <Footer />}
+      {<Footer />}
     </div>
   );
 };
