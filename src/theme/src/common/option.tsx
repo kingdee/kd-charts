@@ -141,6 +141,7 @@ export const commonOption = ({
     },
     bar: {
       tooltip: {},
+      barMaxWidth: 24, // 设置柱状图柱体最大宽度为 24px
     },
     line: {
       itemStyle: {

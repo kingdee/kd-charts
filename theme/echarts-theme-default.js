@@ -99,6 +99,7 @@ export default {
     padding: 8,
   },
   bar: {
+    barMaxWidth: 24,
     tooltip: {},
   },
   line: {
