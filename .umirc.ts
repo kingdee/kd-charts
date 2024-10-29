@@ -3,7 +3,7 @@ import { defineConfig } from 'dumi';
 export default defineConfig({
   title: '可视化中心',
   favicon: 'https://www.kingdee.design/theme/favicon.ico',
-  logo: '/images/logo.png',
+  logo: 'https://kui.kingdee.com/assets/image/logo/charts.png',
   outputPath: 'docs-dist',
   publicPath: '/',
   // base: '/charts/',
