@@ -1,24 +1,26 @@
 export default {
   color: [
-    '#276FF5',
-    '#17CCC0',
-    '#A571F7',
-    '#2ABEFF',
-    '#FF8F0F',
-    '#7ABF13',
-    '#F5C342',
-    '#F1689A',
+    '#40a9ff',
+    '#45dad1',
+    '#73d13d',
+    '#ffc53d',
+    '#ffa940',
+    '#f57582',
+    '#9f69e2',
+    '#6682f5',
+    '#f273b5',
   ],
   graph: {
     color: [
-      '#276FF5',
-      '#17CCC0',
-      '#A571F7',
-      '#2ABEFF',
-      '#FF8F0F',
-      '#7ABF13',
-      '#F5C342',
-      '#F1689A',
+      '#40a9ff',
+      '#45dad1',
+      '#73d13d',
+      '#ffc53d',
+      '#ffa940',
+      '#f57582',
+      '#9f69e2',
+      '#6682f5',
+      '#f273b5',
     ],
   },
   visualMap: {
@@ -54,10 +56,10 @@ export default {
     axisLine: {
       lineStyle: {
         color: [
-          [0.2, '#276FF5'],
-          [0.5, '#17CCC0'],
-          [0.8, '#A571F7'],
-          [1, '#2ABEFF'],
+          [0.2, '#40A9FF'],
+          [0.5, '#26C9C3'],
+          [0.8, '#FFC53D'],
+          [1, '#F57582'],
         ],
       },
     },
@@ -98,7 +100,6 @@ export default {
     padding: 8,
   },
   bar: {
-    barMaxWidth: 24,
     tooltip: {},
   },
   line: {

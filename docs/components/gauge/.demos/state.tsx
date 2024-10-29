@@ -12,12 +12,6 @@ function index() {
         theme={'defaultTheme'}
         style={{ height: 320 * 2 + 'px' }}
       />
-
-      <ReactECharts
-        option={DefaultOption}
-        theme={'defaultTheme'}
-        style={{ width: 250 + 'px', height: 250 + 'px' }}
-      />
     </div>
   );
 }

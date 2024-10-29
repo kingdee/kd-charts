@@ -9,7 +9,7 @@ export const DefaultOption = {
     left: 'center',
     textStyle: {
       fontWeight: 'normal',
-      fontSize: 24,
+      fontSize: 16,
       align: 'center',
     },
   },
@@ -17,7 +17,7 @@ export const DefaultOption = {
     {
       name: '访问来源',
       type: 'pie', // echarts 图表类型， 必选
-      radius: ['40%', '70%'], // 饼图的半径， 必选
+      radius: ['35%', '50%'], // 饼图的半径， 必选
       data: [
         { value: 1048, name: '搜索引擎' },
         { value: 735, name: '直接访问' },

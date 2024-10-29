@@ -4,22 +4,9 @@ export const DefaultOption = {
   xAxis: [
     {
       type: 'category',
-      data: [
-        '1月',
-        '2月',
-        '3月',
-        '4月',
-        '5月',
-        '6月',
-        '7月',
-        '8月',
-        '9月',
-        '10月',
-        '11月',
-        '12月',
-      ],
+      data: ['1月', '2月', '3月', '4月', '5月', '6月'],
       axisPointer: {
-        type: 'shadow', //坐标轴指示器设置为阴影指示器
+        type: 'shadow', // 坐标轴指示器设置为阴影指示器
       },
     },
   ],
@@ -46,7 +33,7 @@ export const DefaultOption = {
   series: [
     {
       name: '蒸发量',
-      type: 'bar', // echarts 图表类型， 必选
+      type: 'bar', // echarts 图表类型
       data: [
         2.0,
         4.9,
@@ -61,6 +48,9 @@ export const DefaultOption = {
         6.4,
         3.3,
       ],
+      itemStyle: {
+        color: '#276FF5', // 设置柱状图的颜色
+      },
     },
     {
       name: '降水量',
@@ -79,12 +69,21 @@ export const DefaultOption = {
         6.0,
         2.3,
       ],
+      itemStyle: {
+        color: '#A571F7', // 设置柱状图的颜色
+      },
     },
     {
       name: '平均温度',
-      type: 'line', // echarts 图表类型， 必选
-      yAxisIndex: 1, // 设置该系列数据使用的 y 轴的index为1，多条y轴时必选
+      type: 'line', // echarts 图表类型
+      yAxisIndex: 1, // 使用第二个 y 轴
       data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2],
+      lineStyle: {
+        color: '#2ABEFF', // 设置线形图的颜色
+      },
+      itemStyle: {
+        color: '#2ABEFF', // 设置标记点的颜色
+      },
     },
   ],
 };

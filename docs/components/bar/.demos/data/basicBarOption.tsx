@@ -1,11 +1,11 @@
 export default {
+  legend: {}, // 是否显示图例， 非必选
   xAxis: {
     type: 'category',
     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
   },
   yAxis: {
     type: 'value',
-    name: '单据消息订阅',
   },
   series: [
     {

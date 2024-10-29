@@ -25,8 +25,8 @@ function RadioIndex(props) {
         <Radio.Button value="redTheme">红火夏日</Radio.Button>
         <Radio.Button value="naturalTheme">自然舒适</Radio.Button>
         <Radio.Button value="scienceTheme">科技色板</Radio.Button>
-        <Radio.Button value="winterTheme">冰霜冬季</Radio.Button>
-        <Radio.Button value="macaroonTheme">马卡龙</Radio.Button>
+        {/* <Radio.Button value="winterTheme">冰霜冬季</Radio.Button>
+        <Radio.Button value="macaroonTheme">马卡龙</Radio.Button> */}
       </Radio.Group>
       <ReactECharts
         option={data}

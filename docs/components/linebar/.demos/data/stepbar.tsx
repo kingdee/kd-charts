@@ -4,20 +4,7 @@ export const DefaultOption = {
   xAxis: [
     {
       type: 'category',
-      data: [
-        '1月',
-        '2月',
-        '3月',
-        '4月',
-        '5月',
-        '6月',
-        '7月',
-        '8月',
-        '9月',
-        '10月',
-        '11月',
-        '12月',
-      ],
+      data: ['1月', '2月', '3月', '4月', '5月', '6月'],
       axisPointer: {
         type: 'shadow',
       },
@@ -61,13 +48,22 @@ export const DefaultOption = {
         6.4,
         3.3,
       ],
+      itemStyle: {
+        color: '#276FF5', // 设置柱状图颜色
+      },
     },
     {
       name: '平均温度',
       type: 'line',
       yAxisIndex: 1,
-      step: 'middle',
+      step: 'middle', // 设置为阶梯线
       data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2],
+      lineStyle: {
+        color: '#A571F7', // 设置线形图颜色
+      },
+      itemStyle: {
+        color: '#A571F7', // 设置标记点颜色
+      },
     },
   ],
 };

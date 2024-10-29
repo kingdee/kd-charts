@@ -5,7 +5,7 @@ export const DefaultOption = {
       data: [
         {
           value: 50,
-          name: '完成率',
+          name: '错误率',
         },
       ],
       title: {

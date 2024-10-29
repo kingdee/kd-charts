@@ -10,7 +10,7 @@ export const DefaultOption = {
   series: [
     {
       // 底部的透明柱状图， 必选
-      name: '辅助',
+      name: '总费用',
       type: 'bar',
       stack: '总量',
       itemStyle: {

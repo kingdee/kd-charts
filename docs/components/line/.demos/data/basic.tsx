@@ -1,4 +1,5 @@
 export const DefaultOption = {
+  legend: {}, // 是否显示图例， 非必选
   tooltip: {
     axisPointer: {
       type: 'cross', //坐标轴指示器设置为十字准星指示器

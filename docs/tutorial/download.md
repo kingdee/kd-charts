@@ -35,6 +35,16 @@ export default () => {
         </div>
         <div
           onClick={() => {
+            addGio('theme_deepblue', 'echarts-theme-deepblue');
+          }}
+        >
+          <img src="/charts/主题/科技色板.png" height="257px" />
+          <p style={{ color: '#293c55', margin: 0, marginTop: '12px' }}>
+            科技深蓝
+          </p>
+        </div>
+        <div
+          onClick={() => {
             addGio('theme_light_red', 'echarts-theme-red');
           }}
         >
@@ -78,6 +88,16 @@ export default () => {
           <img src="/charts/主题/常规色板_dark.png" height="313px" />
           <p style={{ color: '#293c55', margin: 0, marginTop: '12px' }}>
             常规色板
+          </p>
+        </div>
+        <div
+          onClick={() => {
+            addGio('theme_dark_deepblue', 'echarts-theme-deepblue-dark');
+          }}
+        >
+          <img src="/charts/主题/科技色板_dark.png" height="313px" />
+          <p style={{ color: '#293c55', margin: 0, marginTop: '12px' }}>
+            科技深蓝
           </p>
         </div>
         <div

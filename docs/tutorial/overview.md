@@ -56,17 +56,22 @@ import redThemeDark from '@kdcloudjs/kd-charts/theme/echarts-theme-red-dark.js';
 import naturalThemeDark from '@kdcloudjs/kd-charts/theme/echarts-theme-natural-dark.js';
 import scienceThemeDark from '@kdcloudjs/kd-charts/theme/echarts-theme-science-dark.js';
 
+import deepblueTheme from '@kdcloudjs/kd-charts/theme/echarts-theme-deepblue.js';
+import deepblueThemeDark from '@kdcloudjs/kd-charts/theme/echarts-theme-deepblue-dark.js';
+
 import chinaJson from '../../src/theme/src/common/map/json/china.json';
 
 export default function() {
   let defaultThemeList = [
     { theme: 'defaultTheme', name: '常规色板' },
+    { theme: 'deepblueTheme', name: '科技深蓝' },
     { theme: 'redTheme', name: '红火夏日' },
     { theme: 'naturalTheme', name: '自然舒适' },
     { theme: 'scienceTheme', name: '科技色板' },
   ];
   let darkThemeList = [
     { theme: 'defaultThemeDark', name: '常规色板' },
+    { theme: 'deepblueThemeDark', name: '科技深蓝' },
     { theme: 'redThemeDark', name: '红火夏日' },
     { theme: 'naturalThemeDark', name: '自然舒适' },
     { theme: 'scienceThemeDark', name: '科技色板' },
@@ -101,6 +106,9 @@ export default function() {
   echarts.registerTheme('redThemeDark', redThemeDark);
   echarts.registerTheme('naturalThemeDark', naturalThemeDark);
   echarts.registerTheme('scienceThemeDark', scienceThemeDark);
+
+  echarts.registerTheme('deepblueTheme', deepblueTheme);
+  echarts.registerTheme('deepblueThemeDark', deepblueThemeDark);
 
   echarts.registerMap('china', chinaJson);
   return (

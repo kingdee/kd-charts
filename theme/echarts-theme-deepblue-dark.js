@@ -1,33 +1,35 @@
 export default {
   color: [
-    '#40a9ff',
-    '#45dad1',
-    '#73d13d',
-    '#ffc53d',
-    '#ffa940',
-    '#f57582',
-    '#9f69e2',
-    '#6682f5',
-    '#f273b5',
+    '#276FF5',
+    '#A571F7',
+    '#2ABEFF',
+    '#17CCC0',
+    '#7ABF13',
+    '#F5C342',
+    '#FF8F0F',
+    '#F1689A',
+    '#F2606B',
   ],
   graph: {
     color: [
-      '#40a9ff',
-      '#45dad1',
-      '#73d13d',
-      '#ffc53d',
-      '#ffa940',
-      '#f57582',
-      '#9f69e2',
-      '#6682f5',
-      '#f273b5',
+      '#276FF5',
+      '#A571F7',
+      '#2ABEFF',
+      '#17CCC0',
+      '#7ABF13',
+      '#F5C342',
+      '#FF8F0F',
+      '#F1689A',
+      '#F2606B',
     ],
   },
   visualMap: {
+    itemWidth: 10,
+    itemHeight: 10,
     color: ['#40a9ff'],
     inRange: {
       colorLightness: [0.9, 0.15],
-      color: ['#40a9ff'],
+      color: ['#276FF5'],
     },
   },
   geo: {
@@ -45,10 +47,12 @@ export default {
     },
     itemStyle: {
       normal: {
-        borderColor: '#fff',
+        borderColor: 'rgba(255, 255, 255, 0.6)',
+        areaColor: 'rgba(255, 255, 255, 0.1)',
       },
       emphasis: {
-        areaColor: '#ffc53d',
+        borderColor: 'rgba(255, 197, 61, 0.6)',
+        areaColor: 'rgba(255, 197, 61, 0.1)',
       },
     },
   },
@@ -56,20 +60,34 @@ export default {
     axisLine: {
       lineStyle: {
         color: [
-          [0.2, '#40A9FF'],
-          [0.5, '#26C9C3'],
-          [0.8, '#FFC53D'],
-          [1, '#F57582'],
+          [0.2, '#276FF5'],
+          [0.5, '#17CCC0'],
+          [0.8, '#FF8F0F'],
+          [1, '#F2606B'],
         ],
       },
     },
+    axisTick: {
+      lineStyle: {
+        color: '#FFFFFF',
+      },
+    },
+    axisLabel: {
+      color: '#FFFFFF', // 修改刻度值颜色为白色
+    },
+    pointer: {
+      itemStyle: {
+        color: '#666666',
+      },
+    },
     title: {
-      offsetCenter: [0, '20%'],
-      color: 'rgba(255, 255, 255, 0.4)',
+      offsetCenter: [0, '30%'],
+      color: '#FFFFFF',
       fontWeight: 'bold',
     },
     detail: {
-      offsetCenter: [0, '40%'],
+      offsetCenter: [0, '50%'],
+      color: '#FFFFFF', // 修改指标值颜色为白色
     },
   },
   backgroundColor: '#333',
@@ -81,11 +99,25 @@ export default {
     subtextStyle: {
       color: '#6E7079',
     },
+    top: '15%',
+    itemGap: 10,
   },
   legend: {
+    itemWidth: 10,
+    itemHeight: 10,
     textStyle: {
       color: 'rgba(255, 255, 255, 0.65)',
     },
+    itemStyle: {
+      borderColor: '#333', // 设置图例项的外边框颜色为 #333
+      borderWidth: 1, // 设置外边框宽度
+    },
+  },
+  grid: {
+    left: '3%',
+    right: '8%',
+    bottom: '3%',
+    containLabel: true,
   },
   tooltip: {
     trigger: 'axis',
@@ -100,21 +132,30 @@ export default {
     padding: 8,
   },
   bar: {
+    barMaxWidth: 16,
     tooltip: {},
   },
   line: {
+    // symbol: 'circle',
+    // symbolSize: 2,
     itemStyle: {
+      // color: 'rgba(208, 211, 232, 1)',
+      borderColor: '#333',
       borderWidth: 2,
     },
     tooltip: {},
   },
   pie: {
+    color: ['#276FF5', '#A571F7', '#2ABEFF', '#17CCC0', '#FF8F0F', '#F5C342'],
     itemStyle: {
-      borderColor: '#fff',
+      borderColor: '#333',
       borderWidth: 1,
     },
   },
   radar: {
+    center: ['50%', '50%'],
+    radius: '50%',
+    color: ['#276FF5', '#A571F7'],
     areaStyle: {
       opacity: 0.3,
     },
@@ -124,21 +165,15 @@ export default {
   },
   scatter: {
     itemStyle: {
-      opacity: 0.7,
+      opacity: 0.8,
     },
   },
   funnel: {
-    color: [
-      '#40a9ff',
-      '#45dad1',
-      '#73d13d',
-      '#ffc53d',
-      '#ffa940',
-      '#f57582',
-      '#9f69e2',
-      '#6682f5',
-      '#f273b5',
-    ],
+    color: ['#276FF5', '#A571F7', '#2ABEFF', '#F5C342', '#FF8F0F'],
+    itemStyle: {
+      borderColor: '#333', // 设置漏斗图的边框颜色为 #333
+      borderWidth: 1, // 设置边框宽度
+    },
   },
   categoryAxis: {
     axisLine: {
